@@ -6,19 +6,19 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:32:45 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/23 18:23:42 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/05/23 20:14:25 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
+#include "snake.h"
 
 int	main(void)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
+	t_data	data;
 	
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 700, 700, "The Snake");
-	mlx_loop(mlx_ptr);
+	data.mlx = mlx_init();
+	data.win = mlx_new_window(data.mlx, 700, 700, "The Snake");
+	mlx_loop(data.mlx);
 	return (0);
 }

@@ -6,7 +6,19 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 18:00:01 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/23 18:00:02 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/05/23 20:14:47 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SNAKE_H
+#define SNAKE_H
+
+typedef struct s_data
+{
+	void	*mlx;
+	void	*win;
+	
+}	t_data;
+
+
+#endif
