@@ -6,7 +6,7 @@
 #    By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 18:01:09 by yel-mrab          #+#    #+#              #
-#    Updated: 2022/05/23 18:21:25 by yel-mrab         ###   ########.fr        #
+#    Updated: 2022/05/23 21:31:00 by yel-mrab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(MLXFLAGS) $(OBJS) -o $(NAME)
 
-$(BDIR)/%.o : src/%.c
+$(BDIR)/%.o : src/%.c inc/snake.h
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
