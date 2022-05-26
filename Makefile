@@ -6,7 +6,7 @@
 #    By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 18:01:09 by yel-mrab          #+#    #+#              #
-#    Updated: 2022/05/23 21:31:00 by yel-mrab         ###   ########.fr        #
+#    Updated: 2022/05/26 13:41:20 by yel-mrab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 INC = -I ./inc
 
-FILES = main utils
+FILES = main utils events moves \
+		list/lstaddback list/lstaddfront list/lstlast list/lstnew list/lstsize
 BDIR = build
 OBJS = $(addprefix $(BDIR)/, $(FILES:=.o))
 

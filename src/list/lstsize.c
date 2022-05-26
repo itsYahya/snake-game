@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   lstsize.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 17:32:45 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/25 18:52:34 by yel-mrab         ###   ########.fr       */
+/*   Created: 2022/05/25 22:07:27 by yel-mrab          #+#    #+#             */
+/*   Updated: 2022/05/25 22:55:05 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
-#include "snake.h"
-#include <stdlib.h>
+#include "list.h"
 
-int	main(void)
+int	ft_lstsize(t_list *head)
 {
-	t_data	data;
-	
-	data.map = (char **)malloc(sizeof(char *) * HEIGHT);
-	ft_init(&data);
-	ft_setevents(&data);
-	data.start = 0;
-	data.collect = 0;
-	// ft_move(&data);
-	mlx_loop(data.mlx);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (head != 0)
+	{
+		head = head->next;
+		i++;		
+	}
+	return (i);
 }

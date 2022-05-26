@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   lstaddfront.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 17:32:45 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/25 18:52:34 by yel-mrab         ###   ########.fr       */
+/*   Created: 2022/05/25 22:18:35 by yel-mrab          #+#    #+#             */
+/*   Updated: 2022/05/26 13:52:03 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
-#include "snake.h"
-#include <stdlib.h>
+#include "list.h"
 
-int	main(void)
+void	ft_lstaddfront(t_list **head, t_list *new)
 {
-	t_data	data;
-	
-	data.map = (char **)malloc(sizeof(char *) * HEIGHT);
-	ft_init(&data);
-	ft_setevents(&data);
-	data.start = 0;
-	data.collect = 0;
-	// ft_move(&data);
-	mlx_loop(data.mlx);
-	return (0);
+	t_list	*head1;
+
+	head1 = *head;
+	new->next = head1;
+	*head = new;
+	head1->previous = new;
 }

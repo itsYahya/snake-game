@@ -2,3 +2,4 @@ build/
 *.o
 snake
 .DS_Store
+.vscode/
