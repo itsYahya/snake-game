@@ -6,7 +6,7 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 16:17:33 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/25 14:18:40 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:34:20 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	key_hook(int button, t_data *data)
 		if (button == 123)
 			data->d = -1;
 		data->type = TP_X;
+		data->start = 1;
 	}
 	else if ((button == 125 || button == 126) && (data->type == TP_X || !data->start))
 	{
@@ -44,9 +45,11 @@ int	key_hook(int button, t_data *data)
 		if (button == 126)
 			data->d = -1;
 		data->type = TP_Y;
+		data->start = 1;
 	}
 	else if (button == 53)
 		ft_exit(data);
-	data->start = 1;
+	else if (button == 49 && data->d)
+		data->start = !data->start;
 	return (0);
 }

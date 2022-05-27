@@ -6,7 +6,7 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 18:00:42 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/26 14:27:09 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:42:01 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	ft_putplayerinplace(t_data *data)
 	static int	start = 1;
 	
 	x = -1;
-	while (x < 0 || x > WIDTH - 2)
+	while (x < 1 || x > WIDTH - 2)
 		x = rand() % WIDTH;
 	y = -1;	
-	while (y < 0 || y > HEIGHT - 2)
+	while (y < 4 || y > HEIGHT - 2)
 		y = rand() % HEIGHT;
 	if (start)
 	{
@@ -50,7 +50,7 @@ void	ft_putplayerinplace(t_data *data)
 	while (xx < 1 || xx > WIDTH - 2 || xx == data->x)
 		xx = rand() % WIDTH;
 	yy = -1;	
-	while (yy < 1 || yy > HEIGHT - 2 || yy == data->y)
+	while (yy < 4 || yy > HEIGHT - 2 || data->map[yy][xx] == 'P')
 		yy = rand() % HEIGHT;
 	data->map[yy][xx] = 'C';
 	mlx_put_image_to_window(data->mlx, data->win, data->imgs[TP_COLL], xx * 10, yy * 10);
@@ -91,4 +91,35 @@ void	ft_init(t_data *data)
 	ft_initimgs(data);
 	data->win = mlx_new_window(data->mlx, WIDTH * 10, HEIGHT * 10, "The Snake");
 	ft_putimgs(data);
+}
+
+int	ft_countdeg(int number)
+{
+	int	index = 1;
+
+	while (number >= 10)
+	{
+		index++;
+		number /= 10;
+	}
+	return (index);
+}
+
+void	ft_looper(char *table, int index, int number)
+{
+	if (number >= 10)
+		ft_looper(table, index - 1, number / 10);
+	table[index] = number % 10 + '0';
+}
+
+char	*ft_itoa(int number)
+{
+	int		count;
+	char	*table;
+
+	count = ft_countdeg(number);
+	table = (char *)malloc(sizeof(char) * count);
+	table[count] = 0;
+	ft_looper(table, count - 1, number);
+	return (table);
 }
