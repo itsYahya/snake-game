@@ -6,7 +6,7 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 18:00:01 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/27 00:39:19 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/05/27 14:28:27 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	ft_putplayerinplace(t_data *data);
 void	ft_newlast(t_data *data);
 char	*ft_itoa(int number);
 void	ft_clear(t_data *data);
+void	show_alert(t_data *data);
 
 #endif

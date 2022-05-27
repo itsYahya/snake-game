@@ -6,7 +6,7 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:59:49 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/26 18:21:31 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/05/27 17:02:09 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ int	ft_movehead(t_data *data)
 		if ((x == data->x && data->y == y && data->start) || (data->map[y][x] == 'P' && data->start))
 		{
 			data->died = 1;
-			void	*win;
-			win = mlx_new_window(data->mlx, 200, 200, "Alert");
+			printf("you lost body!");
+			sleep(2);
+			ft_exit(data);
 		}
 		else if (data->start)
 		{
@@ -93,7 +94,7 @@ void	ft_clear(t_data *data)
 	while (y < 3)
 	{
 		x = 1;
-		while (x < 10)
+		while (x < 15)
 		{
 			mlx_put_image_to_window(data->mlx, data->win, data->imgs[TP_GROUND], x * 10, y * 10);
 			x++;
