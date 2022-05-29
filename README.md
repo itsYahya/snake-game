@@ -1,6 +1,6 @@
 # Snake game
 
-Fisrt of all this is just ```toobbyaa``` (because why not)
+Fisrt of all this is just ```TTOOBYAA``` (because why not)
 
 ## About this snake game
 It's not like other snake games, because it was developed by me that's first, and second i used ```C``` to builted it up.
