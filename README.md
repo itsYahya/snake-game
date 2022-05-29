@@ -1,6 +1,6 @@
 # Snake game
 
-Fisrt of all this is just toobbyaa (because why not)
+Fisrt of all this is just ```toobbyaa``` (because why not)
 
 ## About this snake game
 It's not like other snake games, because it was developed by me that's first, and second i used ```C``` to builted it up.
@@ -25,3 +25,4 @@ If the snake is big, i basically i cover the last element of the snake.
 ### Collectables
 They appear randomly on the map, each time the snake ate one a new one appears and so on so fort.
 
+## Difficulties
