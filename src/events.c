@@ -6,7 +6,7 @@
 /*   By: yel-mrab <yel-mrab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 16:17:33 by yel-mrab          #+#    #+#             */
-/*   Updated: 2022/05/27 16:51:54 by yel-mrab         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:03:19 by yel-mrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	ft_setevents(t_data *data)
 {
-	mlx_key_hook(data->win, key_hook, data);
+	mlx_hook(data->win, 2, 0, key_hook, data);
 	mlx_loop_hook(data->mlx, ft_movehead, data);
 	mlx_hook(data->win, 17, 0, ft_exit, data);
 }
