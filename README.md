@@ -26,3 +26,17 @@ If the snake is big, i basically i cover the last element of the snake.
 They appear randomly on the map, each time the snake ate one a new one appears and so on so fort.
 
 ## Difficulties
+The only difficulie that i faced, is how to keep track of the last `element` of the snake.
+
+Cause we need to cover the last element each time the snake moves forwored.
+
+### How i solved that one
+I basically let the linked list magic do the job.
+
+I crated a double one (linked list), so i can go forward and backward.
+
+Every node of it represents the position of a snake element, the coordinates of where that element is at the map.
+
+So the head of the snake is the head of the list, and the tail of snake is the tail of the list.
+
+And each time the snake moves ahead, a new node get created and added to the front of the list, and the last element of the list get deleted, after we cover it on the map of course. (easy)...
